@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmailServiceImpl implements EmailService {
  @Autowired private JavaMailSender javaMailSender;
- @Value("pavasgarg2003@gmail.com") private String sender;
+ @Value("m.bharat1357@gmail.com") private String sender;
  public String sendSimpleMail(EmailDetails details)
  {
      try {

@@ -10,7 +10,7 @@ import java.util.Date;
 
 @Component
 public class JwtUtil {
-    public static String secret = "bbb@supermart_secretKey#$%_";
+    public static String secret = "bk@supermart_secretKey#$%_";
     public String generateJwt(Customer customer){
         Date issuedAt = new Date();
         Claims claims = Jwts.claims().setIssuer(customer.getEmail().toString()).setIssuedAt(issuedAt);

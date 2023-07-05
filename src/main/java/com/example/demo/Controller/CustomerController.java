@@ -143,9 +143,9 @@ public class CustomerController {
             EmailDetails ed = new EmailDetails();
             ed.setRecipient(customerService.getCustomer(historyList.get(0).getCustomerID()).getEmail());
             if (list.get(0).isExpress()) {
-                ed.setMsgBody("Thank you for shopping with BBB SuperMart.\n\nYour Order summary is as follows\n\n" + orders + "\n\nTotal Bill Amount: \u20B9" + total_cost + "\n\nShipping Type: Express Shipping (+\u20B9100) \n\nExpected Delivery Date: " + historyList.get(0).getExpected_date() + "\n\nDelivery Address: " + historyList.get(0).getAddress());
+                ed.setMsgBody("Thank you for shopping with BK SuperMart.\n\nYour Order summary is as follows\n\n" + orders + "\n\nTotal Bill Amount: \u20B9" + total_cost + "\n\nShipping Type: Express Shipping (+\u20B9100) \n\nExpected Delivery Date: " + historyList.get(0).getExpected_date() + "\n\nDelivery Address: " + historyList.get(0).getAddress());
             } else {
-                ed.setMsgBody("Thank you for shopping with BBB SuperMart.\n\nYour Order summary is as follows\n\n" + orders + "\n\nTotal Bill Amount: \u20B9" + total_cost + "\n\nShipping Type: Regular Shipping\\n\\nExpected Delivery Date: " + historyList.get(0).getExpected_date() + "\n\nDelivery Address: " + historyList.get(0).getAddress());
+                ed.setMsgBody("Thank you for shopping with BK SuperMart.\n\nYour Order summary is as follows\n\n" + orders + "\n\nTotal Bill Amount: \u20B9" + total_cost + "\n\nShipping Type: Regular Shipping\\n\\nExpected Delivery Date: " + historyList.get(0).getExpected_date() + "\n\nDelivery Address: " + historyList.get(0).getAddress());
             }
             ed.setSubject("Tax invoice for " + historyList.get(0).getDate());
             emailService.sendSimpleMail(ed);
@@ -165,7 +165,7 @@ public class CustomerController {
             resetToken = Integer.toString((rand.nextInt((99999 - 100) + 1) + 10));
             EmailDetails ed = new EmailDetails();
             ed.setRecipient(customer.getEmail());
-            ed.setSubject("BBB SuperMart : Reset Password");
+            ed.setSubject("BK SuperMart : Reset Password");
             ed.setMsgBody("Reset Code is : " + resetToken);
             emailService.sendSimpleMail(ed);
             return resetToken;
@@ -178,7 +178,7 @@ public class CustomerController {
         verifyotp = Integer.toString((rand.nextInt((99999 - 100) + 1) + 10));
         EmailDetails ed = new EmailDetails();
         ed.setRecipient(customer.getEmail());
-        ed.setSubject("BBB SuperMart : Reset Password");
+        ed.setSubject("BK SuperMart : Reset Password");
         ed.setMsgBody("Reset Code is : " + verifyotp);
         String emailString = emailService.sendSimpleMail(ed);
         return "Mail with Reset Code sent to id: " + customer.getId() + " with OTP as " + verifyotp;
@@ -268,9 +268,9 @@ public class CustomerController {
         EmailDetails ed = new EmailDetails();
         ed.setRecipient(updatedCustomer.getEmail());
         if (PO.isExpress()) {
-            ed.setMsgBody("Thank you for shopping with BBB SuperMart.\n\nYour Order summary is as follows\n\n" + orders + "\n\nTotal Bill Amount: \u20B9" + totalCost + "\n\nShipping Type: Express Shipping (+\u20B9100) \n\nExpected Delivery Date: " + historyList.get(0).getExpected_date() + "\n\nDelivery Address: " + historyList.get(0).getAddress());
+            ed.setMsgBody("Thank you for shopping with BK SuperMart.\n\nYour Order summary is as follows\n\n" + orders + "\n\nTotal Bill Amount: \u20B9" + totalCost + "\n\nShipping Type: Express Shipping (+\u20B9100) \n\nExpected Delivery Date: " + historyList.get(0).getExpected_date() + "\n\nDelivery Address: " + historyList.get(0).getAddress());
         }else {
-            ed.setMsgBody("Thank you for shopping with BBB SuperMart.\n\nYour Order summary is as follows\n\n" + orders + "\n\nTotal Bill Amount: \u20B9" + totalCost + "\n\nShipping Type: Regular Shipping\n\nExpected Delivery Date: " + historyList.get(0).getExpected_date() + "\n\nDelivery Address: " + historyList.get(0).getAddress());
+            ed.setMsgBody("Thank you for shopping with BK SuperMart.\n\nYour Order summary is as follows\n\n" + orders + "\n\nTotal Bill Amount: \u20B9" + totalCost + "\n\nShipping Type: Regular Shipping\n\nExpected Delivery Date: " + historyList.get(0).getExpected_date() + "\n\nDelivery Address: " + historyList.get(0).getAddress());
         }
         ed.setSubject("Tax invoice for " + historyList.get(0).getDate());
         emailService.sendSimpleMail(ed);

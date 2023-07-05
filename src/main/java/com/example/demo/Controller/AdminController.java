@@ -41,7 +41,7 @@ public class AdminController {
     @Autowired
     AdminService adminService;
 
-    @PostMapping("/getAdmin")
+    @GetMapping("/getAdmin")
     public Admin getAdminDetails(@RequestBody Admin admin) {
         return adminService.getAdmin(admin.getId());
     }
